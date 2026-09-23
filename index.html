@@ -6,9 +6,6 @@
 <title>Nguyễn Ngọc Tuyên</title>
 <meta name="description" content="Mobile engineer CV — Flutter & Android, trading and fintech apps.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
 
 <style>
 :root{
@@ -24,6 +21,8 @@
   --down:#D9314A;
   --down-soft:#FBE4E8;
   --shadow:0 1px 2px rgba(18,22,28,.06), 0 8px 24px -16px rgba(18,22,28,.18);
+  --avatar-bg:#DADDE3;
+  --avatar-fg:#9AA1AC;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -39,6 +38,8 @@
     --down:#F1576E;
     --down-soft:rgba(241,87,110,.12);
     --shadow:none;
+    --avatar-bg:#2A3039;
+    --avatar-fg:#6B7480;
   }
 }
 :root[data-theme="dark"]{
@@ -54,6 +55,8 @@
   --down:#F1576E;
   --down-soft:rgba(241,87,110,.12);
   --shadow:none;
+  --avatar-bg:#2A3039;
+  --avatar-fg:#6B7480;
 }
 
 *{box-sizing:border-box}
@@ -61,7 +64,7 @@ html,body{margin:0}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-family:"Times New Roman",Times,serif;
   font-size:15.5px;
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
@@ -71,7 +74,7 @@ body{
 h1,h2,h3{text-wrap:balance;margin:0}
 p{margin:0}
 a{color:var(--accent)}
-code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+code,.mono{font-family:"Times New Roman",Times,serif}
 
 .page{max-width:740px;margin:0 auto}
 
@@ -88,14 +91,22 @@ code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
 
 /* ---------- header ---------- */
 header.masthead{margin-bottom:44px}
+.id-row{display:flex;align-items:center;gap:22px}
+.avatar{
+  width:96px;height:96px;flex:none;border-radius:50%;position:relative;overflow:hidden;
+  display:grid;place-items:end center;background:var(--avatar-bg);
+  border:3px solid var(--surface);box-shadow:0 0 0 1px var(--line),var(--shadow);
+}
+.avatar svg{width:88%;height:88%;fill:var(--avatar-fg)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .eyebrow{
-  font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.14em;
+  font-family:"Times New Roman",Times,serif;font-size:11.5px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;
   align-items:center;gap:8px;
 }
 .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 h1{
-  font-family:"Sora",Georgia,serif;font-weight:700;font-size:clamp(30px,6vw,42px);
+  font-family:"Times New Roman",Times,serif;font-weight:700;font-size:clamp(30px,6vw,42px);
   letter-spacing:-.02em;color:var(--ink);
 }
 .role{color:var(--muted);font-size:16px;margin-top:6px}
@@ -103,10 +114,11 @@ h1{
 
 .contact-row{
   display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:22px;
-  font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--muted);
+  font-family:"Times New Roman",Times,serif;font-size:12.5px;color:var(--muted);
 }
 .contact-row a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
 .contact-row a:hover{color:var(--accent);border-color:var(--accent)}
+.contact-row b{color:var(--ink);font-weight:600}
 
 .summary{
   margin-top:26px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);
@@ -116,9 +128,9 @@ h1{
 /* ---------- sections ---------- */
 section{margin-bottom:52px}
 .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:22px}
-.sec-head .idx{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+.sec-head .idx{font-family:"Times New Roman",Times,serif;font-size:12px;color:var(--accent)}
 .sec-head h2{
-  font-family:"Sora",serif;font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);
+  font-family:"Times New Roman",Times,serif;font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);
 }
 .sec-head .rule{flex:1;height:1px;background:var(--line)}
 
@@ -135,8 +147,8 @@ section{margin-bottom:52px}
 }
 .job.current::before{background:var(--accent)}
 .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;align-items:baseline}
-.job-co{font-family:"Sora",serif;font-weight:600;font-size:17px;color:var(--ink)}
-.job-dates{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.job-co{font-family:"Times New Roman",Times,serif;font-weight:600;font-size:17px;color:var(--ink)}
+.job-dates{font-family:"Times New Roman",Times,serif;font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
 .job-sub{color:var(--muted);font-size:13.5px;margin-top:3px}
 .job-sub b{color:var(--ink);font-weight:500}
 .job ul{margin:14px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:7px}
@@ -144,7 +156,7 @@ section{margin-bottom:52px}
 .job li::marker{color:var(--accent)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .tag{
-  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);
+  font-family:"Times New Roman",Times,serif;font-size:11px;color:var(--muted);
   background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:3px 8px;
 }
 
@@ -155,7 +167,7 @@ section{margin-bottom:52px}
   border:1px solid var(--line);border-radius:9px;flex-wrap:wrap;
 }
 .tier-label{
-  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  font-family:"Times New Roman",Times,serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
   color:var(--muted);min-width:84px;flex:none;
 }
 .tier-dots{display:inline-flex;gap:2px;margin-right:8px;vertical-align:middle}
@@ -166,7 +178,7 @@ section{margin-bottom:52px}
 
 .skill-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .sgroup h3{
-  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  font-family:"Times New Roman",Times,serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
   color:var(--muted);margin-bottom:9px;
 }
 .sgroup .tags{margin-top:0}
@@ -178,7 +190,7 @@ section{margin-bottom:52px}
   box-shadow:var(--shadow);
 }
 .oss-card a.name{
-  font-family:"JetBrains Mono",monospace;font-weight:600;font-size:14.5px;color:var(--ink);
+  font-family:"Times New Roman",Times,serif;font-weight:600;font-size:14.5px;color:var(--ink);
   text-decoration:none;display:inline-flex;align-items:center;gap:6px;
 }
 .oss-card a.name:hover{color:var(--accent)}
@@ -196,13 +208,13 @@ section{margin-bottom:52px}
 .edu-row:last-child{border-bottom:none}
 .edu-name{font-weight:600;color:var(--ink);font-size:14.5px}
 .edu-sub{color:var(--muted);font-size:13px;margin-top:2px}
-.edu-dates{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.edu-dates{font-family:"Times New Roman",Times,serif;font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
 
 /* ---------- footer ---------- */
 footer{
   margin-top:60px;padding-top:26px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
-  color:var(--muted);font-size:12.5px;font-family:"JetBrains Mono",monospace;
+  color:var(--muted);font-size:12.5px;font-family:"Times New Roman",Times,serif;
 }
 footer a{color:var(--muted)}
 footer a:hover{color:var(--accent)}
@@ -211,6 +223,8 @@ footer a:hover{color:var(--accent)}
   body{font-size:14.8px}
   .tier{flex-direction:column;align-items:flex-start;gap:6px}
   .tier-label{min-width:0}
+  .id-row{gap:16px}
+  .avatar{width:76px;height:76px}
 }
 </style>
 </head>
@@ -221,15 +235,23 @@ footer a:hover{color:var(--accent)}
   <div class="ticker" aria-hidden="true" id="ticker"></div>
 
   <header class="masthead">
-    <div class="eyebrow"><span class="dot"></span>Mobile Engineer</div>
-    <h1>Nguyễn Ngọc Tuyên</h1>
-    <p class="role"><b>Flutter</b> &amp; <b>Android</b> engineer</p>
+    <div class="id-row">
+      <div class="avatar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <img src="assets/images/avatar.jpg" alt="Nguyễn Ngọc Tuyên" onerror="this.remove()">
+      </div>
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Mobile Engineer</div>
+        <h1>Nguyễn Ngọc Tuyên</h1>
+        <p class="role"><b>Flutter</b> &amp; <b>Android</b> engineer</p>
+      </div>
+    </div>
     <div class="contact-row">
-      <a href="mailto:nguyenngoctuyen188@gmail.com">nguyenngoctuyen188@gmail.com</a>
-      <a href="tel:+84334580451">0334 580 451</a>
-      <span>Ho Chi Minh City</span>
-      <a href="https://github.com/MrTuyennn" target="_blank" rel="noopener">github.com/MrTuyennn</a>
-      <a href="https://linkedin.com/in/tuyennn" target="_blank" rel="noopener">linkedin.com/in/tuyennn</a>
+      <span><b>Email:</b> <a href="mailto:nguyenngoctuyen188@gmail.com">nguyenngoctuyen188@gmail.com</a></span>
+      <span><b>Phone:</b> <a href="tel:+84334580451">0334 580 451</a></span>
+      <span><b>Location:</b> Ho Chi Minh City</span>
+      <span><b>GitHub:</b> <a href="https://github.com/MrTuyennn" target="_blank" rel="noopener">github.com/MrTuyennn</a></span>
+      <span><b>LinkedIn:</b> <a href="https://linkedin.com/in/tuyennn" target="_blank" rel="noopener">linkedin.com/in/tuyennn</a></span>
     </div>
     <p class="summary">Mobile engineer with 5+ years shipping cross-platform apps for iOS and Android, plus native Android work in Kotlin and Jetpack Compose. Designs around MVVM, Clean Architecture, SOLID, and common design patterns for code that scales and stays testable. Comfortable in BLoC and Riverpod, native modules through Platform Channels, store releases, and Agile teams.</p>
   </header>
