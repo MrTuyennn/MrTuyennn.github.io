@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nguyễn Ngọc Tuyên</title>
 <meta name="description" content="Mobile Engineer">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://mrtuyennn.github.io/">
+<meta property="og:title" content="Nguyễn Ngọc Tuyên">
+<meta property="og:description" content="Mobile Engineer">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,6 +136,29 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
   .header h1{font-size:27px}
   .header .title{font-size:18px}
 }
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion:no-preference){
+  /* scroll reveal — only hidden once JS is running */
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+
+  /* hover */
+  .is-scrolling *{pointer-events:none}
+  .photo{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .photo:hover{transform:scale(1.04) rotate(-2deg)}
+  .job{border-left:3px solid transparent;margin-left:-3px;transition:border-color .25s}
+  .job:hover{border-left-color:var(--teal)}
+  .contact-item .icon{transition:background-color .25s,color .25s}
+  .contact-item:hover .icon{background:var(--navy);color:#fff}
+  .pkg{transition:transform .25s}
+  .pkg:hover{transform:translateX(4px)}
+  .edu .desc,.edu .desc::before{transition:background-color .25s,border-right-color .25s}
+  .edu li:hover .desc{background:#E4ECEB}
+  .edu li:hover .desc::before{border-right-color:#E4ECEB}
+  .badge{transition:transform .2s,background-color .2s}
+  .levels li:hover .badge{transform:scale(1.1);background:var(--teal)}
+}
+
 @page{size:A4;margin:12mm 10mm}
 @media print{
   body{background:#fff;padding:0;font-size:11.2px;line-height:1.35}
@@ -156,6 +183,8 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
   .box h2,.profession,.job .year,.job .product{break-after:avoid}
   .job ul{break-before:avoid}
   a{color:inherit}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
@@ -341,5 +370,38 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
   </div>
 </div>
 
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  var items = document.querySelectorAll('.box > h2, .box > p, .box > ul:not(.edu):not(.levels), .job, .pkg, .contact-item, .edu li, .levels li');
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.addEventListener('transitionend', function done(ev){
+        if (ev.target !== e.target || ev.propertyName !== 'transform') return;
+        e.target.classList.remove('reveal', 'in');
+        e.target.removeEventListener('transitionend', done);
+      });
+      io.unobserve(e.target);
+    });
+  }, {threshold:0});
+
+  // Pause hover effects while scrolling so the cursor sweeping over items does not flash them.
+  var root = document.documentElement, t;
+  window.addEventListener('scroll', function(){
+    root.classList.add('is-scrolling');
+    clearTimeout(t);
+    t = setTimeout(function(){ root.classList.remove('is-scrolling'); }, 150);
+  }, {passive:true});
+  // Only animate what the user scrolls to; anything visible on open shows as-is.
+  items.forEach(function(el){
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
