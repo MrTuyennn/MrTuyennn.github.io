@@ -132,9 +132,30 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
   .header h1{font-size:27px}
   .header .title{font-size:18px}
 }
+@page{size:A4;margin:12mm 10mm}
 @media print{
-  body{background:#fff;padding:0}
-  .container{margin-top:90px}
+  body{background:#fff;padding:0;font-size:11.2px;line-height:1.35}
+  .container{margin:0;padding:0;max-width:none}
+  .header{margin-top:0}
+  .photo{width:104px;height:104px;padding:4px}
+  .photo-inner{width:96px;height:96px}
+  .header h1{font-size:26px;margin-top:4px}
+  .header .title{font-size:16px}
+  .header::after{margin-top:10px}
+  .cols{grid-template-columns:1.85fr 1.15fr;gap:22px}
+  .box{margin-top:12px}
+  .box h2{font-size:17px;margin-bottom:6px}
+  .box h2 svg{width:16px;height:16px}
+  .box ul{padding-left:30px}
+  .profession{font-size:14px}
+  .job{margin-bottom:10px}
+  .pkg{margin-bottom:6px}
+  .pkg a{font-size:13px}
+  .edu h3{font-size:14px}
+  .contact-item,.edu li,.pkg,.levels li,.box h2{break-inside:avoid}
+  .box h2,.profession,.job .year,.job .product{break-after:avoid}
+  .job ul{break-before:avoid}
+  a{color:inherit}
 }
 </style>
 </head>
