@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguyễn Ngọc Tuyên</title>
+<meta name="description" content="Mobile engineer CV — Flutter & Android, trading and fintech apps.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --bg:#F6F7F9;
+  --surface:#FFFFFF;
+  --surface-2:#F0F2F5;
+  --line:#E2E6EB;
+  --ink:#12161C;
+  --muted:#5B6472;
+  --accent:#0E9F6E;
+  --accent-ink:#08633F;
+  --accent-soft:#E1F5EC;
+  --down:#D9314A;
+  --down-soft:#FBE4E8;
+  --shadow:0 1px 2px rgba(18,22,28,.06), 0 8px 24px -16px rgba(18,22,28,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0E11;
+    --surface:#12161C;
+    --surface-2:#181D25;
+    --line:#252B34;
+    --ink:#E9ECF1;
+    --muted:#8D97A5;
+    --accent:#2FD79A;
+    --accent-ink:#8FF0CA;
+    --accent-soft:rgba(47,215,154,.12);
+    --down:#F1576E;
+    --down-soft:rgba(241,87,110,.12);
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0E11;
+  --surface:#12161C;
+  --surface-2:#181D25;
+  --line:#252B34;
+  --ink:#E9ECF1;
+  --muted:#8D97A5;
+  --accent:#2FD79A;
+  --accent-ink:#8FF0CA;
+  --accent-soft:rgba(47,215,154,.12);
+  --down:#F1576E;
+  --down-soft:rgba(241,87,110,.12);
+  --shadow:none;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15.5px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  padding-inline:20px;
+  padding-block:56px 40px;
+}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+.page{max-width:740px;margin:0 auto}
+
+/* ---------- ticker strip ---------- */
+.ticker{
+  display:flex;gap:0;align-items:flex-end;height:34px;margin-bottom:34px;
+  border-bottom:1px solid var(--line);padding-bottom:0;
+}
+.ticker i{
+  flex:1 1 0;background:var(--accent);opacity:.22;border-radius:2px 2px 0 0;
+  margin-inline:1px;
+}
+.ticker i:nth-child(odd){background:var(--down);opacity:.16}
+
+/* ---------- header ---------- */
+header.masthead{margin-bottom:44px}
+.eyebrow{
+  font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;
+  align-items:center;gap:8px;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+h1{
+  font-family:"Sora",Georgia,serif;font-weight:700;font-size:clamp(30px,6vw,42px);
+  letter-spacing:-.02em;color:var(--ink);
+}
+.role{color:var(--muted);font-size:16px;margin-top:6px}
+.role b{color:var(--ink);font-weight:600}
+
+.contact-row{
+  display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:22px;
+  font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--muted);
+}
+.contact-row a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}
+.contact-row a:hover{color:var(--accent);border-color:var(--accent)}
+
+.summary{
+  margin-top:26px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);
+  border-radius:10px;color:var(--ink);font-size:14.8px;max-width:64ch;box-shadow:var(--shadow);
+}
+
+/* ---------- sections ---------- */
+section{margin-bottom:52px}
+.sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:22px}
+.sec-head .idx{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent)}
+.sec-head h2{
+  font-family:"Sora",serif;font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--ink);
+}
+.sec-head .rule{flex:1;height:1px;background:var(--line)}
+
+/* ---------- experience timeline ---------- */
+.timeline{position:relative;padding-left:26px}
+.timeline::before{
+  content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line);
+}
+.job{position:relative;padding-bottom:36px}
+.job:last-child{padding-bottom:0}
+.job::before{
+  content:"";position:absolute;left:-26px;top:5px;width:11px;height:11px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--accent);
+}
+.job.current::before{background:var(--accent)}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;align-items:baseline}
+.job-co{font-family:"Sora",serif;font-weight:600;font-size:17px;color:var(--ink)}
+.job-dates{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.job-sub{color:var(--muted);font-size:13.5px;margin-top:3px}
+.job-sub b{color:var(--ink);font-weight:500}
+.job ul{margin:14px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:7px}
+.job li{color:var(--ink);font-size:14.3px}
+.job li::marker{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{
+  font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:3px 8px;
+}
+
+/* ---------- skills ---------- */
+.skill-tiers{display:flex;flex-direction:column;gap:14px;margin-bottom:24px}
+.tier{
+  display:flex;align-items:baseline;gap:14px;padding:12px 14px;background:var(--surface);
+  border:1px solid var(--line);border-radius:9px;flex-wrap:wrap;
+}
+.tier-label{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);min-width:84px;flex:none;
+}
+.tier-dots{display:inline-flex;gap:2px;margin-right:8px;vertical-align:middle}
+.tier-dots i{width:5px;height:5px;border-radius:50%;background:var(--line)}
+.tier-dots i.on{background:var(--accent)}
+.tier-items{color:var(--ink);font-size:14px;flex:1 1 200px}
+.tier-items b{font-weight:600}
+
+.skill-groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.sgroup h3{
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:9px;
+}
+.sgroup .tags{margin-top:0}
+
+/* ---------- open source ---------- */
+.oss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.oss-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;
+  box-shadow:var(--shadow);
+}
+.oss-card a.name{
+  font-family:"JetBrains Mono",monospace;font-weight:600;font-size:14.5px;color:var(--ink);
+  text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+}
+.oss-card a.name:hover{color:var(--accent)}
+.oss-card a.name svg{opacity:.5;flex:none}
+.oss-card p{margin-top:8px;color:var(--muted);font-size:13.3px;line-height:1.55}
+.oss-note{margin-top:14px;color:var(--muted);font-size:13px}
+.oss-note a{color:var(--muted);border-bottom:1px solid var(--line)}
+.oss-note a:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- education ---------- */
+.edu-row{
+  display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+}
+.edu-row:last-child{border-bottom:none}
+.edu-name{font-weight:600;color:var(--ink);font-size:14.5px}
+.edu-sub{color:var(--muted);font-size:13px;margin-top:2px}
+.edu-dates{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:60px;padding-top:26px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+  color:var(--muted);font-size:12.5px;font-family:"JetBrains Mono",monospace;
+}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+
+@media (max-width:520px){
+  body{font-size:14.8px}
+  .tier{flex-direction:column;align-items:flex-start;gap:6px}
+  .tier-label{min-width:0}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="ticker" aria-hidden="true" id="ticker"></div>
+
+  <header class="masthead">
+    <div class="eyebrow"><span class="dot"></span>Mobile Engineer</div>
+    <h1>Nguyễn Ngọc Tuyên</h1>
+    <p class="role"><b>Flutter</b> &amp; <b>Android</b> engineer</p>
+    <div class="contact-row">
+      <a href="mailto:nguyenngoctuyen188@gmail.com">nguyenngoctuyen188@gmail.com</a>
+      <a href="tel:+84334580451">0334 580 451</a>
+      <span>Ho Chi Minh City</span>
+      <a href="https://github.com/MrTuyennn" target="_blank" rel="noopener">github.com/MrTuyennn</a>
+      <a href="https://linkedin.com/in/tuyennn" target="_blank" rel="noopener">linkedin.com/in/tuyennn</a>
+    </div>
+    <p class="summary">Mobile engineer with 5+ years shipping cross-platform apps for iOS and Android, plus native Android work in Kotlin and Jetpack Compose. Designs around MVVM, Clean Architecture, SOLID, and common design patterns for code that scales and stays testable. Comfortable in BLoC and Riverpod, native modules through Platform Channels, store releases, and Agile teams.</p>
+  </header>
+
+  <section id="experience">
+    <div class="sec-head"><span class="idx">01</span><h2>Experience</h2><span class="rule"></span></div>
+    <div class="timeline">
+
+      <div class="job current">
+        <div class="job-head">
+          <span class="job-co">Wikex Exchange</span>
+          <span class="job-dates">Nov 2025 — Present</span>
+        </div>
+        <p class="job-sub"><b>Wikex</b> — trading app for iOS and Android</p>
+        <ul>
+          <li>Build features in Flutter with BLoC in a Melos monorepo; structure feature packages with Clean Architecture and SOLID so modules stay decoupled, reusable, and testable.</li>
+          <li>Build native Android parts in Kotlin with Jetpack Compose alongside the Flutter app — MVVM with ViewModel, Coroutines, and StateFlow for unidirectional data flow, Hilt for DI.</li>
+          <li>Built candlestick charts from server data with technical indicators such as Ichimoku Kinko Hyo, drawn with <code>CustomPainter</code>.</li>
+          <li>Implemented passkey (WebAuthn/FIDO2) sign-in, Google Sign-In, and app lock with PIN, biometrics, and auto-lock timeout.</li>
+          <li>Handled the real-time WebSocket connection for market data as a shared monorepo module, with auto-reconnect when the connection drops.</li>
+          <li>Built product features including Staking, Launchpad, QR deposits, and FCM push notifications.</li>
+          <li>Scrum with sprints tracked in ClickUp — sprint planning, widget-level task breakdown with estimates, raising design/logic issues with the PM early.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Flutter</span><span class="tag">BLoC</span><span class="tag">Melos</span>
+          <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Coroutines</span>
+          <span class="tag">StateFlow</span><span class="tag">Hilt</span><span class="tag">WebSocket</span><span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-co">Cloudlab Vina</span>
+          <span class="job-dates">Oct 2023 — Oct 2025</span>
+        </div>
+        <p class="job-sub"><b>STAGE</b> — K-pop fandom content &amp; commerce platform, Korean startup</p>
+        <ul>
+          <li>Key mobile developer in a 2-person team, end-to-end: architecture, UI, API integration, build config, App Store/Google Play releases, maintenance.</li>
+          <li>Set up project architecture with MVVM, Clean Architecture, and DI (<code>get_it</code>, <code>injectable</code>).</li>
+          <li>Built the full shipping flow — address management, shipping fee calculation, order tracking.</li>
+          <li>Wrote native Android/iOS modules: deep links, location, in-app purchases, QR generation and scanning.</li>
+          <li>Integrated Naver and KakaoTalk login, webview payment, Firebase (FCM, Crashlytics, Analytics); built a reels-style video module.</li>
+          <li>Built real-time chat over sockets, letting fans message idols and sellers directly in the app.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Flutter</span><span class="tag">BLoC</span><span class="tag">get_it</span>
+          <span class="tag">injectable</span><span class="tag">Dio</span><span class="tag">Freezed</span>
+          <span class="tag">Socket</span><span class="tag">Kotlin</span><span class="tag">Swift</span><span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-co">Hanet Connect</span>
+          <span class="job-dates">Jul 2022 — Oct 2023</span>
+        </div>
+        <p class="job-sub"><b>Hanet Connect</b> — AI face-recognition security cameras · 10K+ downloads</p>
+        <ul>
+          <li>Mobile developer in a 3-person team: UI/UX, API integration, build config, App Store/Google Play release and maintenance.</li>
+          <li>Built AI face-recognition features distinguishing members, customers, and strangers, with access control and instant stranger-detected alerts.</li>
+          <li>Built camera controls — connect, rotate, video quality, browse videos stored on the camera.</li>
+          <li>Danger-alert calls from camera to phone via OneSignal push notifications.</li>
+          <li>State with Redux, Redux-Saga, Redux-Persist and React Hooks; shipped hotfixes over the air with CodePush.</li>
+          <li>Set up Flutter in the project and built new features with BLoC alongside the React Native app.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">React Native</span><span class="tag">Flutter</span><span class="tag">TypeScript</span>
+          <span class="tag">Redux</span><span class="tag">Redux-Saga</span><span class="tag">BLoC</span>
+          <span class="tag">OneSignal</span><span class="tag">CodePush</span>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-co">PKH Company</span>
+          <span class="job-dates">Aug 2020 — Jun 2022</span>
+        </div>
+        <p class="job-sub"><b>Medpro</b> — online hospital appointment booking · 100K+ downloads</p>
+        <ul>
+          <li>Built screens from design specs with React Native and React Hooks in a 2-person team.</li>
+          <li>Integrated APIs for the online booking flow — patients register for appointments anytime without queuing.</li>
+          <li>State with Redux, Redux-Saga, Redux-Persist; push notifications with OneSignal and Firebase.</li>
+          <li>Helped with build config, App Store/Google Play releases, and app maintenance.</li>
+          <li>Also released apps for partner hospitals — Cho Ray, UMC, Nhi Dong 1, Vung Tau.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">React Native</span><span class="tag">TypeScript</span><span class="tag">Redux</span>
+          <span class="tag">Redux-Saga</span><span class="tag">Firebase</span><span class="tag">OneSignal</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="idx">02</span><h2>Skills</h2><span class="rule"></span></div>
+
+    <div class="skill-tiers">
+      <div class="tier">
+        <span class="tier-label">Expert</span>
+        <span class="tier-items"><span class="tier-dots"><i class="on"></i><i class="on"></i><i class="on"></i></span>Flutter (Dart)</span>
+      </div>
+      <div class="tier">
+        <span class="tier-label">Proficient</span>
+        <span class="tier-items"><span class="tier-dots"><i class="on"></i><i class="on"></i><i></i></span>Android — Kotlin, Jetpack Compose, Coroutines, Flow/StateFlow, Hilt</span>
+      </div>
+      <div class="tier">
+        <span class="tier-label">Familiar</span>
+        <span class="tier-items"><span class="tier-dots"><i class="on"></i><i></i><i></i></span>React Native (TypeScript), iOS (Swift)</span>
+      </div>
+    </div>
+
+    <div class="skill-groups">
+      <div class="sgroup">
+        <h3>Architecture</h3>
+        <div class="tags"><span class="tag">MVVM</span><span class="tag">Clean Architecture</span><span class="tag">SOLID</span><span class="tag">Singleton</span><span class="tag">DI</span><span class="tag">Melos monorepo</span></div>
+      </div>
+      <div class="sgroup">
+        <h3>State</h3>
+        <div class="tags"><span class="tag">BLoC</span><span class="tag">Riverpod</span><span class="tag">Redux</span><span class="tag">Redux-Saga</span></div>
+      </div>
+      <div class="sgroup">
+        <h3>Integrations</h3>
+        <div class="tags"><span class="tag">Platform Channels</span><span class="tag">Firebase</span><span class="tag">OneSignal</span><span class="tag">Passkeys</span><span class="tag">Biometrics</span><span class="tag">IAP</span><span class="tag">Deep links</span><span class="tag">Social login</span><span class="tag">WebSocket</span><span class="tag">Charts</span></div>
+      </div>
+      <div class="sgroup">
+        <h3>Release</h3>
+        <div class="tags"><span class="tag">App Store Connect</span><span class="tag">Google Play Console</span></div>
+      </div>
+      <div class="sgroup">
+        <h3>Workflow</h3>
+        <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitLab</span><span class="tag">Sourcetree</span><span class="tag">Jira</span><span class="tag">ClickUp</span><span class="tag">Asana</span><span class="tag">Redmine</span><span class="tag">Scrum</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oss">
+    <div class="sec-head"><span class="idx">03</span><h2>Open Source</h2><span class="rule"></span></div>
+    <div class="oss-grid">
+
+      <div class="oss-card">
+        <a class="name" href="https://pub.dev/packages/k_chart_jk" target="_blank" rel="noopener">k_chart_jk <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h6v6M12 4L4 12"/></svg></a>
+        <p>Candlestick and line charts — 8 main and 13 secondary indicators (MA, BOLL, Ichimoku, MACD, RSI…), pinch zoom, crosshair, live price, order book.</p>
+      </div>
+      <div class="oss-card">
+        <a class="name" href="https://pub.dev/packages/device_info_app" target="_blank" rel="noopener">device_info_app <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h6v6M12 4L4 12"/></svg></a>
+        <p>Device and app info — model, app version, RAM, disk, locale.</p>
+      </div>
+      <div class="oss-card">
+        <a class="name" href="https://pub.dev/packages/crop_image_plus" target="_blank" rel="noopener">crop_image_plus <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h6v6M12 4L4 12"/></svg></a>
+        <p>Pick an image, crop it on a native interactive screen, then resize and compress.</p>
+      </div>
+      <div class="oss-card">
+        <a class="name" href="https://pub.dev/packages/flutter_netdiag_plus" target="_blank" rel="noopener">flutter_netdiag_plus <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 4h6v6M12 4L4 12"/></svg></a>
+        <p>Network diagnostics — DNS lookup, TCP connect, HTTP RTT, multi-target ping, traceroute.</p>
+      </div>
+
+    </div>
+    <p class="oss-note">Several packages ship native Android and iOS code. Full list → <a href="https://github.com/MrTuyennn" target="_blank" rel="noopener">github.com/MrTuyennn</a></p>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><span class="idx">04</span><h2>Education</h2><span class="rule"></span></div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-name">University of Information Technology (UIT)</div>
+        <div class="edu-sub">Bachelor of Computer Science</div>
+      </div>
+      <div class="edu-dates">2024 — 2026</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-name">FPT Polytechnic</div>
+        <div class="edu-sub">Associate Degree, Computer Programming</div>
+      </div>
+      <div class="edu-dates">2018 — 2021</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Nguyễn Ngọc Tuyên — Mobile Engineer</span>
+    <span><a href="mailto:nguyenngoctuyen188@gmail.com">nguyenngoctuyen188@gmail.com</a> · <a href="https://github.com/MrTuyennn" target="_blank" rel="noopener">GitHub</a> · <a href="https://linkedin.com/in/tuyennn" target="_blank" rel="noopener">LinkedIn</a></span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var t = document.getElementById('ticker');
+  if(!t) return;
+  var n = 46, bars = [];
+  var v = 50;
+  for(var i=0;i<n;i++){
+    v += (Math.sin(i*0.7)+((i*37)%7-3))*3;
+    v = Math.max(18, Math.min(100, v));
+    bars.push(v);
+  }
+  t.innerHTML = bars.map(function(h){ return '<i style="height:'+h+'%"></i>'; }).join('');
+})();
+</script>
+</body>
+</html>
