@@ -1,2 +1,10 @@
 # Generated CV PDF (keep local only)
 *.pdf
+
+# Claude Code local config (hooks)
+.claude/
+
+# Raw photos stay local; only the web avatar is published
+assets/images/*
+!assets/images/avatar.jpg
+!assets/images/.gitkeep
