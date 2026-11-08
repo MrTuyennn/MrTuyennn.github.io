@@ -210,7 +210,7 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
 
       <section class="box">
         <h2><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Summary</h2>
-        <p class="summary">Mobile engineer with 5+ years shipping cross-platform apps for iOS and Android, plus native Android work in Kotlin and Jetpack Compose. Designs around MVVM, Clean Architecture, SOLID, and common design patterns for code that scales and stays testable. Comfortable in BLoC and Riverpod, native modules through Platform Channels, store releases, and Agile teams.</p>
+        <p class="summary">Mobile engineer with 5+ years owning cross-platform apps end-to-end — architecture, native modules, store releases, and maintenance — across fintech, e-commerce, and IoT products. Drives technical decisions around MVVM, Clean Architecture, SOLID, and common design patterns for code that scales and stays testable, and works at the native layer (Kotlin/Jetpack Compose, Swift) whenever a feature needs it. Comfortable owning a feature package from design through release, bridging Flutter to native code via Platform Channels, and keeping team code quality consistent through peer review.</p>
       </section>
 
       <section class="box">
@@ -233,18 +233,16 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
         <div class="job">
           <div class="profession">Mobile Developer - Wikex Exchange</div>
           <div class="year">Nov 2025 – now</div>
-          <div class="product">Wikex — trading app for iOS and Android</div>
+          <div class="product">Wikex — crypto trading app, and Wikex Commodity — physical silver trading app, both for iOS and Android</div>
           <ul>
-            <li>Develop the mobile app end-to-end with the team — architecture, feature development, native Android modules, App Store/Google Play releases, and ongoing maintenance.</li>
-            <li>Build features in Flutter with BLoC in a Melos monorepo; structure feature packages with Clean Architecture and SOLID so modules stay decoupled, reusable, and testable.</li>
+            <li>Own mobile architecture and delivery for the trading app — feature development, native Android modules, App Store/Google Play releases, and ongoing maintenance.</li>
+            <li>Structure Flutter feature packages with Clean Architecture, SOLID, and BLoC in a Melos monorepo so modules stay decoupled, reusable, and testable; bridge to native Android/iOS via Platform Channels when a feature needs native capability.</li>
             <li>Build native Android parts in Kotlin with Jetpack Compose alongside the Flutter app — MVVM with ViewModel, Coroutines, and StateFlow for unidirectional data flow, Hilt for DI.</li>
-            <li>Hands-on with Platform Channels, bridging Flutter to native Android and iOS code.</li>
-            <li>Built candlestick charts from server data with technical indicators such as MA, BOLL, MACD, RSI, and more, drawn with <code>CustomPainter</code>.</li>
+            <li>Built candlestick charts from server data with technical indicators such as MA, BOLL, MACD, RSI, and more, drawn with <code>CustomPainter</code>, plus real-time WebSocket market-data feeds with auto-reconnect on dropped connections.</li>
             <li>Implemented passkey (WebAuthn/FIDO2) sign-in, Google Sign-In, and app lock with PIN, biometrics, and auto-lock timeout.</li>
-            <li>Handled real-time WebSocket connections for market data and candlestick chart data, with auto-reconnect when the connection drops.</li>
-            <li>Built product features including Staking, Launchpad, QR deposits, and FCM push notifications.</li>
-            <li>Take part in peer code reviews — giving and receiving constructive feedback to keep code quality consistent and share knowledge across the team.</li>
-            <li>Scrum with sprints tracked in ClickUp — sprint planning, widget-level task breakdown with estimates, raising design/logic issues with the PM early.</li>
+            <li>Delivered core product features — Staking, Launchpad, QR deposits, and FCM push notifications.</li>
+            <li>Also build Wikex Commodity, a sister app for physical silver trading on the same Flutter/Melos architecture — real-time market data and order book over WebSocket, buying power checks, contract lookup, and the physical delivery flow (authorized-recipient management, signed proof of receipt on delivery).</li>
+            <li>Drive code quality through peer review and sprint planning in ClickUp — breaking work down at the widget level with estimates and flagging design/logic issues with the PM early.</li>
           </ul>
         </div>
 
@@ -253,13 +251,10 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
           <div class="year">Oct 2023 – Oct 2025 (2 yrs 1 mo)</div>
           <div class="product">STAGE — K-pop fandom content &amp; commerce platform, Korean startup</div>
           <ul>
-            <li>Owned the app end-to-end as a key developer in a 2-person mobile team — architecture, UI, API integration, build config, App Store/Google Play releases, and ongoing maintenance.</li>
-            <li>Set up project architecture with MVVM, Clean Architecture, and DI (<code>get_it</code>, <code>injectable</code>).</li>
-            <li>Built the full shipping flow — address management, shipping fee calculation, order tracking.</li>
-            <li>Wrote native Android/iOS modules: deep links, location, in-app purchases, QR generation and scanning.</li>
+            <li>Owned the app end-to-end as the key developer in a 2-person mobile team — set project architecture (MVVM, Clean Architecture, DI with <code>get_it</code>/<code>injectable</code>), UI, API integration, build config, and App Store/Google Play releases.</li>
+            <li>Built the full e-commerce shipping flow — address management, shipping fee calculation, order tracking — plus a reels-style video module and real-time socket-based chat connecting fans with idols and sellers.</li>
+            <li>Wrote native Android/iOS modules for deep links, location, in-app purchases, and QR generation/scanning.</li>
             <li>Integrated Naver and KakaoTalk login, webview payment, and Firebase (FCM, Crashlytics, Analytics).</li>
-            <li>Built a reels-style video module.</li>
-            <li>Built real-time chat over sockets, letting fans message idols and sellers directly in the app.</li>
             <li>Cross-reviewed code with the other developer, exchanging feedback to keep the codebase clean, consistent, and maintainable.</li>
           </ul>
         </div>
@@ -269,11 +264,10 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
           <div class="year">Jul 2022 – Oct 2023 (1 yr 4 mos)</div>
           <div class="product">Hanet Connect — AI face-recognition security cameras · 10K+ downloads</div>
           <ul>
-            <li>Mobile developer in a 3-person team: UI/UX, API integration, build config, App Store/Google Play release and maintenance.</li>
-            <li>Built AI face-recognition features distinguishing members, customers, and strangers, with access control and instant stranger-detected alerts.</li>
+            <li>Core mobile developer in a 3-person team — UI/UX, API integration, build config, and App Store/Google Play release and maintenance.</li>
+            <li>Built AI face-recognition features distinguishing members, customers, and strangers, with access control and instant stranger-detected alerts delivered as danger-alert calls via OneSignal push notifications.</li>
             <li>Built camera controls — connect, rotate, video quality, browse videos stored on the camera.</li>
-            <li>Danger-alert calls from camera to phone via OneSignal push notifications.</li>
-            <li>State with Redux, Redux-Saga, Redux-Persist and React Hooks; shipped hotfixes over the air with CodePush.</li>
+            <li>Managed state with Redux, Redux-Saga, Redux-Persist, and React Hooks; shipped hotfixes over the air with CodePush.</li>
             <li>Set up Flutter in the project and built new features with BLoC alongside the React Native app.</li>
           </ul>
         </div>
@@ -283,11 +277,9 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
           <div class="year">Aug 2020 – Jun 2022 (1 yr 11 mos)</div>
           <div class="product">Medpro — online hospital appointment booking · 100K+ downloads</div>
           <ul>
-            <li>Built screens from design specs with React Native and React Hooks in a 2-person team.</li>
-            <li>Integrated APIs for the online booking flow — patients register for appointments anytime without queuing.</li>
-            <li>State with Redux, Redux-Saga, Redux-Persist; push notifications with OneSignal and Firebase.</li>
-            <li>Helped with build config, App Store/Google Play releases, and app maintenance.</li>
-            <li>Also released apps for partner hospitals — Cho Ray, UMC, Nhi Dong 1, Vung Tau.</li>
+            <li>Built screens from design specs and integrated APIs for the online booking flow with React Native and React Hooks in a 2-person team, letting patients register for appointments anytime without queuing.</li>
+            <li>Managed state with Redux, Redux-Saga, Redux-Persist; added push notifications with OneSignal and Firebase.</li>
+            <li>Helped with build config, App Store/Google Play releases, and app maintenance, including releases for partner hospitals — Cho Ray, UMC, Nhi Dong 1, Vung Tau.</li>
           </ul>
         </div>
       </section>
