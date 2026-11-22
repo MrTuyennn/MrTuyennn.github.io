@@ -235,14 +235,12 @@ code{font-family:inherit;font-size:inherit;font-weight:700}
           <div class="year">Nov 2025 – now</div>
           <div class="product">Wikex — commodity derivatives trading app for iOS and Android · <a href="https://play.google.com/store/apps/details?id=com.vn.wikex&hl=vi" target="_blank" rel="noopener">Google Play</a> · <a href="https://apps.apple.com/app/wikex-hàng-hóa-phái-sinh/id6828375214" target="_blank" rel="noopener">App Store</a></div>
           <ul>
-            <li>Own mobile architecture and delivery for the trading app — feature development, native Android modules, App Store/Google Play releases, and ongoing maintenance.</li>
-            <li>Structure Flutter feature packages with Clean Architecture, SOLID, and BLoC in a Melos monorepo so modules stay decoupled, reusable, and testable; bridge to native Android/iOS via Platform Channels when a feature needs native capability.</li>
-            <li>Build native Android parts in Kotlin with Jetpack Compose alongside the Flutter app — MVVM with ViewModel, Coroutines, and StateFlow for unidirectional data flow, Hilt for DI.</li>
-            <li>Built candlestick charts from server data with technical indicators such as MA, BOLL, MACD, RSI, and more, drawn with <code>CustomPainter</code>, plus real-time WebSocket market-data feeds with auto-reconnect on dropped connections.</li>
-            <li>Implemented passkey (WebAuthn/FIDO2) sign-in, Google Sign-In, and app lock with PIN, biometrics, and auto-lock timeout.</li>
-            <li>Delivered core product features — Staking, Launchpad, QR deposits, and FCM push notifications.</li>
-            <li>Also build the physical silver (commodity) trading module on a separate Flutter/Melos codebase shipping to the same production app — real-time market data and order book over WebSocket, buying power checks, contract lookup, and the physical delivery flow (authorized-recipient management, signed proof of receipt on delivery).</li>
-            <li>Drive code quality through peer review and sprint planning in ClickUp — breaking work down at the widget level with estimates and flagging design/logic issues with the PM early.</li>
+            <li>Own mobile architecture and delivery for the trading app — decoupled, testable Flutter feature packages (Clean Architecture, SOLID, BLoC) in a Melos monorepo, plus App Store/Google Play releases and maintenance.</li>
+            <li>Build native Android modules in Kotlin/Jetpack Compose (MVVM, Coroutines, StateFlow, Hilt) and bridge Flutter to native Android/iOS via Platform Channels.</li>
+            <li>Develop candlestick charts with technical indicators (MA, BOLL, MACD, RSI, and more) drawn with <code>CustomPainter</code>, fed by real-time WebSocket market data with auto-reconnect.</li>
+            <li>Deliver the physical silver trading module on a separate Flutter/Melos codebase shipped in the same app — real-time order book over WebSocket, buying-power checks, contract lookup, and physical delivery (authorized recipients, signed proof of receipt).</li>
+            <li>Implement passkey (WebAuthn/FIDO2) and Google sign-in, app lock (PIN, biometrics, auto-lock timeout), QR deposits, and FCM push notifications.</li>
+            <li>Drive code quality through peer review and widget-level sprint planning in ClickUp.</li>
           </ul>
         </div>
 
